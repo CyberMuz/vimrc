@@ -19,6 +19,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-sensible'
 Bundle 'scrooloose/nerdtree'
+Bundle 'Valloric/YouCompleteMe'
 
 " Github repos of the user 'vim-scripts'
 " => can omit the username part
