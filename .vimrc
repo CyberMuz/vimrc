@@ -19,11 +19,14 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-sensible'
 Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
 
 " Github repos of the user 'vim-scripts'
 " => can omit the username part
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+Bundle 'DirDiff.vim'
+Bundle 'autoload_cscope.vim'
 
 " non github repos
 " Bundle 'git://git.wincent.com/command-t.git'
@@ -86,7 +89,7 @@ set tags=./tags;~/dev/powerzac-5.6/support/tags;~/dev/powerzac-5.6/zacapps/zaccd
 " set foldlevel=1         "this is just what i use
 
 set foldmethod=syntax
-set foldlevelstart=1
+set foldlevelstart=10
 let perl_fold=1 
 
 nnoremap th  :tabfirst<CR>
