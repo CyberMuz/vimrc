@@ -8,7 +8,7 @@ call vundle#rc()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
+Bundle 'gmarik/Vundle.vim'
 
 " My Bundles here:
 "
@@ -44,7 +44,7 @@ set tabstop=4
 set shiftwidth=4
 set mouse=a
 
-colorscheme jellybeans
+colorscheme elflord
 
 " set cinkeys=0{,0},:,0#,!,!^F
 " let mapleader = \",\"
