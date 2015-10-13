@@ -4,35 +4,43 @@ set nocompatible               " be iMproved
 filetype off                   " required!
 
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " My Bundles here:
 "
 " original repos on github
-Bundle 'majutsushi/tagbar'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'kien/ctrlp.vim'
-Bundle 'bling/vim-airline'
-Bundle 'tpope/vim-sensible'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'majutsushi/tagbar'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'kien/ctrlp.vim'
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-sensible'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-perl/vim-perl'
+" Plugin 'arnar/vim-matchopen'
+Plugin 'exu/pgsql.vim'
+Plugin 'jonathanfilip/vim-lucius'
+Plugin 'xolox/vim-notes'
+Plugin 'xolox/vim-misc'
 
 " Github repos of the user 'vim-scripts'
 " => can omit the username part
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-Bundle 'DirDiff.vim'
-Bundle 'autoload_cscope.vim'
+Plugin 'L9'
+Plugin 'FuzzyFinder'
+Plugin 'DirDiff.vim'
+Plugin 'autoload_cscope.vim'
+" Plugin 'Highlight-UnMatched-Brackets'
 
 " non github repos
-" Bundle 'git://git.wincent.com/command-t.git'
+" Plugin 'git://git.wincent.com/command-t.git'
 " ...
 
+call vundle#end()
 filetype plugin indent on     " required!
 
 set number
@@ -44,7 +52,13 @@ set tabstop=4
 set shiftwidth=4
 set mouse=a
 
-colorscheme jellybeans
+if &term =~ '^screen'
+    " tmux knows the extended mouse mode
+    set ttymouse=xterm2
+endif
+
+" colorscheme jellybeans
+colorscheme lucius
 
 " set cinkeys=0{,0},:,0#,!,!^F
 " let mapleader = \",\"
@@ -58,11 +72,10 @@ map <leader>p :w<CR>:!perl %<CR>
 
 :set pastetoggle=<F5>
 map <F7> "+y
-map <F8> :set paste<CR>i<C-R>+<Esc>
+map <F8> :set paste<CR>i<C-R>+<Esc>:set nopaste<CR>
 map <F9> <Esc>:w<CR><Esc>:!./normal_tran.sh<CR>
-map <F10> <Esc>mygg"+yG'yzz
-map <F11> <Esc>O# NOTE <goran> 
-map <F12> <Esc>O# NOTE Commented by goran on <Esc> "=strftime("%c")<CR>Pa. Reason: <CR><Esc>kk J$a
+" map <F10> <Esc>mygg"+yG'yzz
+map <F10> :%y+<CR>
 
 " Mapping often used getter and setters for PowerZac
 inoremap <leader>q $in_attribs->get("");<Esc>F"i
@@ -89,9 +102,9 @@ set tags=./tags;~/dev/powerzac-5.6/support/tags;~/dev/powerzac-5.6/zacapps/zaccd
 " set nofoldenable        "dont fold by default
 " set foldlevel=1         "this is just what i use
 
-set foldmethod=syntax
+set foldmethod=indent
 set foldlevelstart=10
-let perl_fold=1 
+" let perl_fold=1 
 
 nnoremap th  :tabfirst<CR>
 nnoremap tj  :tabnext<CR>
@@ -125,8 +138,8 @@ inoremap {<CR>  {<CR>}<Esc>O
 inoremap {{     {
 inoremap {}     {}
 
-inoremap        (  ()<Left>
-inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
+" inoremap        (  ()<Left>
+" inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
 
 " Activate TagBar
 nmap <F4> :TagbarToggle<CR>
@@ -135,10 +148,27 @@ nmap <F4> :TagbarToggle<CR>
 source ~/.vim/switch-definitions/goran.vim
 
 " vimairline stuff
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#branch#enabled = 1
+" let g:airline_theme             = 'powerlineish'
+let g:airline_theme             = 'luna'
+"let g:airline_enable_branch     = 1
+"let g:airline_enable_syntastic  = 1
 
 " CtrlP stuff
 " set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'a'
+
+" YouCompleteMe
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+"Do not ask when starting vim
+let g:ycm_confirm_extra_conf = 0
+
+" Note dir
+:let g:notes_directories = ['~/projekti/notes']
+:let g:notes_suffix = '.txt'
