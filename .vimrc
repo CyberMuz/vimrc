@@ -22,13 +22,13 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-perl/vim-perl'
-" Plugin 'arnar/vim-matchopen'
 Plugin 'exu/pgsql.vim'
 Plugin 'jonathanfilip/vim-lucius'
 Plugin 'xolox/vim-notes'
 Plugin 'xolox/vim-misc'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'csexton/trailertrash.vim'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " Github repos of the user 'vim-scripts'
 " => can omit the username part
@@ -76,7 +76,6 @@ map <leader>p :w<CR>:!perl %<CR>
 map <F7> "+y
 map <F8> :set paste<CR>i<C-R>+<Esc>:set nopaste<CR>
 map <F9> <Esc>:w<CR><Esc>:!./normal_tran.sh<CR>
-" map <F10> <Esc>mygg"+yG'yzz
 map <F10> :%y+<CR>
 
 " Mapping often used getter and setters for PowerZac
