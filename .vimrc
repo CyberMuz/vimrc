@@ -51,6 +51,7 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set mouse=a
+set hlsearch
 
 if &term =~ '^screen'
     " tmux knows the extended mouse mode
