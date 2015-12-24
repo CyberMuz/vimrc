@@ -1,4 +1,4 @@
-" execute pathogen#infect() 
+" execute pathogen#infect()
 
 set nocompatible               " be iMproved
 filetype off                   " required!
@@ -7,7 +7,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Plugin 'gmarik/Vundle.vim'
 
 " My Bundles here:
@@ -22,11 +22,13 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-perl/vim-perl'
-" Plugin 'arnar/vim-matchopen'
 Plugin 'exu/pgsql.vim'
 Plugin 'jonathanfilip/vim-lucius'
 Plugin 'xolox/vim-notes'
 Plugin 'xolox/vim-misc'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'csexton/trailertrash.vim'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " Github repos of the user 'vim-scripts'
 " => can omit the username part
@@ -75,7 +77,6 @@ map <leader>p :w<CR>:!perl %<CR>
 map <F7> "+y
 map <F8> :set paste<CR>i<C-R>+<Esc>:set nopaste<CR>
 map <F9> <Esc>:w<CR><Esc>:!./normal_tran.sh<CR>
-" map <F10> <Esc>mygg"+yG'yzz
 map <F10> :%y+<CR>
 
 " Mapping often used getter and setters for PowerZac
@@ -105,7 +106,7 @@ set tags=./tags;~/dev/powerzac-5.6/support/tags;~/dev/powerzac-5.6/zacapps/zaccd
 
 set foldmethod=indent
 set foldlevelstart=10
-" let perl_fold=1 
+" let perl_fold=1
 
 nnoremap th  :tabfirst<CR>
 nnoremap tj  :tabnext<CR>
@@ -117,30 +118,17 @@ nnoremap tm  :tabm<CR>
 nnoremap td  :tabclose<CR>
 
 " INPUT mode maps
-inoremap jj <Esc> 
-" inoremap {      {}<left>
-" inoremap {<cr>  {<cr>}<esc>o
-" inoremap {{     {
-" inoremap {}     {}
+inoremap jj <Esc>
 
 au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 
-" Changing the wildmenu 
+" Changing the wildmenu
 set wildmenu
 set wildmode=longest,list
 
 " Disable automatic adding of newline in text
-set textwidth=0 
+set textwidth=0
 set wrapmargin=0
-
-" Bracket magic
-inoremap {      {}<Left>
-inoremap {<CR>  {<CR>}<Esc>O
-inoremap {{     {
-inoremap {}     {}
-
-" inoremap        (  ()<Left>
-" inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
 
 " Activate TagBar
 nmap <F4> :TagbarToggle<CR>
@@ -171,5 +159,5 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 
 " Note dir
-:let g:notes_directories = ['~/projekti/notes']
+:let g:notes_directories = ['~/projekti_sync/notes']
 :let g:notes_suffix = '.txt'
