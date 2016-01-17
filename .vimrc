@@ -164,3 +164,6 @@ let g:ycm_confirm_extra_conf = 0
 :let g:notes_suffix = '.txt'
 
 set encoding=utf-8
+
+nnoremap <expr> n  'Nn'[v:searchforward]
+nnoremap <expr> N  'nN'[v:searchforward]
