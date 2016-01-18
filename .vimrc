@@ -46,6 +46,7 @@ call vundle#end()
 filetype plugin indent on     " required!
 
 set number
+set relativenumber
 set autoindent
 set smartindent
 set cindent
@@ -163,3 +164,8 @@ let g:ycm_confirm_extra_conf = 0
 " Note dir
 :let g:notes_directories = ['~/projekti_sync/notes']
 :let g:notes_suffix = '.txt'
+
+set encoding=utf-8
+
+nnoremap <expr> n  'Nn'[v:searchforward]
+nnoremap <expr> N  'nN'[v:searchforward]
