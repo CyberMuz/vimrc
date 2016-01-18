@@ -72,11 +72,13 @@ map <leader>n :NERDTree<CR>
 
 " Map leader-p to save and execute current buffer in perl
 map <leader>p :w<CR>:!perl %<CR>
+map <leader>f :w \|!fd-reload.sh<CR>
 
 :set pastetoggle=<F5>
 map <F7> "+y
 map <F8> :set paste<CR>i<C-R>+<Esc>:set nopaste<CR>
-map <F9> <Esc>:w<CR><Esc>:!./normal_tran.sh<CR>
+" map <F9> <Esc>:w<CR><Esc>:!./normal_tran.sh<CR>
+map <F9> <Esc>:w<CR><Esc>:!/home/goran/dev/powerzac-5.6/support/tools/perl/ctap_sim/normal_tran.sh<CR>
 map <F10> :%y+<CR>
 
 " Mapping often used getter and setters for PowerZac
