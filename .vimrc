@@ -98,9 +98,6 @@ inoremap <leader>f $out_table->set("", );<Esc>F"i
 
 inoremap <leader>l Log::CoreLog::log_entry(, "");<Esc>F,i
 
-let @n="wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwi'wwi'wi'wwi'wi'wwi'wwwwwwwwwwwwwwwwwwwwwwwwwi'wwi'wwwwi'wwwwwwwwwwwwwi'wi'wwwwwwwwwwwwwi'wj0"
-let @e='wwwwwwwwwwwwr.wwwwwwwwwwwwwwwwr.wwwwwwwwwwwwwwwxwwwwwwwwwwwwwwxwwwwwwwwwwwwj0'
-
 set tags=./tags;~/dev/powerzac-5.6/support/tags;~/dev/powerzac-5.6/zacapps/zaccd/tags
 
 " set foldmethod=indent   "fold based on indent
@@ -137,18 +134,23 @@ set wrapmargin=0
 " Activate TagBar
 nmap <F4> :TagbarToggle<CR>
 
-" definitions for switch.vim plugin
-source ~/.vim/switch-definitions/goran.vim
-
 " vimairline stuff
 "let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
-" let g:airline_theme             = 'powerlineish'
 let g:airline_theme             = 'luna'
 "let g:airline_enable_branch     = 1
 "let g:airline_enable_syntastic  = 1
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " CtrlP stuff
 " set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -161,6 +163,8 @@ nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 "Do not ask when starting vim
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_autoclose_preview_window_after_insertion = 1
+" let g:loaded_youcompleteme = 1
 
 " Note dir
 :let g:notes_directories = ['~/projekti_sync/notes']
