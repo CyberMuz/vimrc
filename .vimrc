@@ -30,6 +30,7 @@ Plugin 'xolox/vim-misc'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'csexton/trailertrash.vim'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'scrooloose/nerdcommenter.git'
 
 " Github repos of the user 'vim-scripts'
 " => can omit the username part
@@ -64,6 +65,8 @@ endif
 
 " colorscheme jellybeans
 colorscheme lucius
+colorscheme Tomorrow-Night
+
 
 " set cinkeys=0{,0},:,0#,!,!^F
 " let mapleader = \",\"
@@ -174,3 +177,6 @@ set encoding=utf-8
 
 nnoremap <expr> n  'Nn'[v:searchforward]
 nnoremap <expr> N  'nN'[v:searchforward]
+
+set colorcolumn=90
+nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
