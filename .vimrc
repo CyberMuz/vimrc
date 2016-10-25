@@ -179,4 +179,3 @@ nnoremap <expr> n  'Nn'[v:searchforward]
 nnoremap <expr> N  'nN'[v:searchforward]
 
 set colorcolumn=90
-nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
