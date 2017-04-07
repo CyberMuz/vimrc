@@ -128,7 +128,8 @@ nnoremap tn  :tabnew<CR>
 nnoremap tm  :tabm<CR>
 nnoremap td  :tabclose<CR>
 " search for word under cursor
-nnoremap gr :vimgrep <cword> ** <Bar> cw<CR>
+" nnoremap gr :vimgrep <cword> ** <Bar> cw<CR>
+nnoremap gr :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " highlight last inserted text
 nnoremap gV `[v`]`
 
@@ -210,3 +211,15 @@ let g:ycm_filetype_specific_completion_to_disable = {'qf':1}
 
 vnoremap ; :<c-u>s/\%V./\=printf("%x",char2nr(submatch(0)))/g"<cr><c-l>`<
 vnoremap u :<c-u>s/\%V[0-9a-fA-F]\{2\}/\=nr2char(printf("%d", "0x".submatch(0)))/g"<cr><c-l>`<
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
