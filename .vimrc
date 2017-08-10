@@ -63,6 +63,8 @@ set shiftwidth=4
 set mouse=a
 set hlsearch
 set cursorline          " highlight current line
+set nowrapscan " I don't want search to circle
+set formatoptions-=t " disables automatic line breaks
 
 if &term =~ '^screen'
     " tmux knows the extended mouse mode
@@ -199,7 +201,7 @@ nnoremap <expr> N  'nN'[v:searchforward]
 " nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 
 " Set wrap if vim is in diff mode
-autocmd FilterWritePre * if &diff | setlocal wrap< | colorscheme desert | endif
+" autocmd FilterWritePre * if &diff | setlocal wrap< | colorscheme desert | endif
 
 autocmd FileType perl set iskeyword-=:
 
@@ -223,3 +225,6 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
+
+" change the selction type
+set selection=exclusive
