@@ -71,6 +71,8 @@ if &term =~ '^screen'
     set ttymouse=xterm2
 endif
 
+set t_Co=256
+
 " colorscheme jellybeans
 " colorscheme Tomorrow-Night
 " Dobra schema:
@@ -110,7 +112,8 @@ inoremap <leader>d $in_table->set("", );<Esc>F"i
 inoremap <leader>f $out_table->set("", );<Esc>F"i
 
 " inoremap <leader>l Log::CoreLog::log_entry(, "");<Esc>F,i
-inoremap <leader>l Log::CoreLog::log_entry(, "perl " . SCRIPT_NAME . "");<Esc>F,i
+" inoremap <leader>l Log::CoreLog::log_entry(, "perl " . SCRIPT_NAME . "");<Esc>F,i
+inoremap <leader>l Log::CoreLog::log_entry(, __PACKAGE__ . "");<Esc>F,i
 
 set tags=./tags;~/dev/powerzac-5.6/support/tags;~/dev/powerzac-5.6/zacapps/zaccd/tags
 
@@ -228,3 +231,7 @@ endif
 
 " change the selction type
 set selection=exclusive
+
+" workaround for NERDTree
+let g:NERDTreeDirArrowExpandable="+"
+let g:NERDTreeDirArrowCollapsible="~"
