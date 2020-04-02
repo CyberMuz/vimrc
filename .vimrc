@@ -27,8 +27,8 @@ Plugin 'exu/pgsql.vim'
 Plugin 'jonathanfilip/vim-lucius'
 Plugin 'xolox/vim-notes'
 Plugin 'xolox/vim-misc'
-" Plugin 'jiangmiao/auto-pairs'
-Plugin 'Raimondi/delimitMate'
+Plugin 'jiangmiao/auto-pairs'
+" Plugin 'Raimondi/delimitMate'
 Plugin 'csexton/trailertrash.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'scrooloose/nerdcommenter.git'
@@ -185,7 +185,7 @@ let g:ctrlp_switch_buffer = 0
 " YouCompleteMe
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " let g:ycm_server_python_interpreter='/usr/bin/python2'
- let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+ let g:ycm_global_ycm_extra_conf = '/home/goran/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 "Do not ask when starting vim
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
