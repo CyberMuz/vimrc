@@ -32,6 +32,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'csexton/trailertrash.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'scrooloose/nerdcommenter.git'
+Plugin 'tpope/vim-surround'
 
 " Badwolf colour scheme
 Plugin 'sjl/badwolf'
