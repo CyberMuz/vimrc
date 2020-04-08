@@ -41,7 +41,7 @@ Plugin 'kshenoy/vim-sol'
 " => can omit the username part
 Plugin 'L9'
 Plugin 'FuzzyFinder'
-Plugin 'DirDiff.vim'
+Plugin 'will133/vim-dirdiff'
 Plugin 'autoload_cscope.vim'
 " Plugin 'Highlight-UnMatched-Brackets'
 
