@@ -3,55 +3,61 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Plugin 'VundleVim/Vundle.vim'
+" Plugin 'VundleVim/Vundle.vim'
+
+call plug#begin('~/.vim/plugged')
 
 " My Bundles here:
 "
 " original repos on github
-Plugin 'majutsushi/tagbar'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'kien/ctrlp.vim'
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'tpope/vim-sensible'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-perl/vim-perl'
-Plugin 'exu/pgsql.vim'
-Plugin 'jonathanfilip/vim-lucius'
-Plugin 'xolox/vim-notes'
-Plugin 'xolox/vim-misc'
-Plugin 'jiangmiao/auto-pairs'
-" Plugin 'Raimondi/delimitMate'
-Plugin 'csexton/trailertrash.vim'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'scrooloose/nerdcommenter.git'
-Plugin 'tpope/vim-surround'
+Plug 'majutsushi/tagbar'
+Plug 'altercation/vim-colors-solarized'
+Plug 'kien/ctrlp.vim'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-sensible'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+" Plug 'Valloric/YouCompleteMe'
+Plug 'vim-perl/vim-perl'
+Plug 'exu/pgsql.vim'
+Plug 'jonathanfilip/vim-lucius'
+Plug 'xolox/vim-notes'
+Plug 'xolox/vim-misc'
+Plug 'jiangmiao/auto-pairs'
+" Plug 'Raimondi/delimitMate'
+Plug 'csexton/trailertrash.vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'preservim/nerdcommenter'
+Plug 'tpope/vim-surround'
 
 " Badwolf colour scheme
-Plugin 'sjl/badwolf'
-Plugin 'kshenoy/vim-sol'
+Plug 'sjl/badwolf'
+Plug 'kshenoy/vim-sol'
 
 " Github repos of the user 'vim-scripts'
 " => can omit the username part
-Plugin 'L9'
-Plugin 'FuzzyFinder'
-Plugin 'will133/vim-dirdiff'
-Plugin 'autoload_cscope.vim'
-" Plugin 'Highlight-UnMatched-Brackets'
-
+Plug 'vim-scripts/L9'
+Plug 'vim-scripts/FuzzyFinder'
+Plug 'will133/vim-dirdiff'
+Plug 'vim-scripts/autoload_cscope.vim'
+" Plug 'Highlight-UnMatched-Brackets'
 " non github repos
-" Plugin 'git://git.wincent.com/command-t.git'
+" Plug 'git://git.wincent.com/command-t.git'
 " ...
 
-call vundle#end()
-filetype plugin indent on     " required!
+" Install Vim COC
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" call vundle#end()
+" filetype plugin indent on     " required!
+
+call plug#end()
 
 set number
 set relativenumber
@@ -77,7 +83,8 @@ set t_Co=256
 " colorscheme jellybeans
 " colorscheme Tomorrow-Night
 " Dobra schema:
-colorscheme lucius
+" colorscheme lucius
+colorscheme industry
 " colorscheme badwolf
 
 
