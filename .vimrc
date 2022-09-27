@@ -142,7 +142,7 @@ nnoremap tm  :tabm<CR>
 nnoremap td  :tabclose<CR>
 " search for word under cursor
 " nnoremap gr :vimgrep <cword> ** <Bar> cw<CR>
-nnoremap gr :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nnoremap ge :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " highlight last inserted text
 nnoremap gV `[v`]`
 
@@ -267,20 +267,20 @@ set shortmess+=c
 " diagnostics appear/become resolved.
 set signcolumn=yes
 
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+"   " Use tab for trigger completion with characters ahead and navigate.
+"   " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+"   " other plugin before putting this into your config.
+"   inoremap <silent><expr> <TAB>
+"         \ pumvisible() ? "\<C-n>" :
+"         \ <SID>check_back_space() ? "\<TAB>" :
+"         \ coc#refresh()
+"   inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
+" 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
@@ -391,3 +391,4 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+source ~/.vim/.cocrc
