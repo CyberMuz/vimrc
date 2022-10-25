@@ -51,6 +51,10 @@ Plug 'vim-scripts/autoload_cscope.vim'
 " Plug 'git://git.wincent.com/command-t.git'
 " ...
 
+Plug 'rust-lang/rust.vim'
+
+Plug 'dense-analysis/ale'
+
 " Install Vim COC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -392,3 +396,8 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 source ~/.vim/.cocrc
+
+" Rust specific configuratio
+let g:rustfmt_autosave = 1
+let g:rustfmt_emit_files = 1
+let g:rustfmt_fail_silently = 0
