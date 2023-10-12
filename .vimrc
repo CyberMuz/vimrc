@@ -29,7 +29,7 @@ Plug 'exu/pgsql.vim'
 Plug 'jonathanfilip/vim-lucius'
 Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 " Plug 'Raimondi/delimitMate'
 Plug 'csexton/trailertrash.vim'
 Plug 'christoomey/vim-tmux-navigator'
@@ -88,7 +88,7 @@ set t_Co=256
 " colorscheme Tomorrow-Night
 " Dobra schema:
 " colorscheme lucius
-colorscheme industry
+colorscheme desert
 " colorscheme badwolf
 
 
