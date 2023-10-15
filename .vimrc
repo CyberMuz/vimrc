@@ -17,7 +17,7 @@ call plug#begin('~/.vim/plugged')
 " original repos on github
 Plug 'majutsushi/tagbar'
 Plug 'altercation/vim-colors-solarized'
-Plug 'kien/ctrlp.vim'
+" Plug 'kien/ctrlp.vim'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-sensible'
@@ -43,7 +43,15 @@ Plug 'kshenoy/vim-sol'
 " Github repos of the user 'vim-scripts'
 " => can omit the username part
 Plug 'vim-scripts/L9'
-Plug 'vim-scripts/FuzzyFinder'
+
+" # Old fuzzif finder
+" #Plug 'vim-scripts/FuzzyFinder'
+
+" # https://github.com/junegunn/fzf.vim
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 Plug 'will133/vim-dirdiff'
 Plug 'vim-scripts/autoload_cscope.vim'
 " Plug 'Highlight-UnMatched-Brackets'
@@ -284,7 +292,7 @@ set signcolumn=yes
 "   let col = col('.') - 1
 "   return !col || getline('.')[col - 1]  =~# '\s'
 " endfunction
-" 
+"
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
@@ -401,3 +409,7 @@ source ~/.vim/.cocrc
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
 let g:rustfmt_fail_silently = 0
+
+" Configuration for fzf
+"
+let g:fzf_layout = { 'down': '40%' }
